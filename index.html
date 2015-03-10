@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="multTable">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplication Table</title>
+</head>
+
+<body>
+    
+    <content>
+        <table ng-controller="MultiplicationCtrl">
+            <tr ng-repeat="numA in numbers">
+                <td ng-repeat="numB in numbers">
+                    {{numA * numB}}
+                </td>
+            </tr>
+        </table>
+    </content>
+    
+    <script data-require="angular.js@1.3.10" data-semver="1.3.10" src="https://code.angularjs.org/1.3.10/angular.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
