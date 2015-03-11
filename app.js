@@ -1,9 +1,18 @@
 angular.module('multTable', [])
 
-.controller('MultiplicationCtrl', function ($scope) {
+.controller('MultiplicationCtrl', function ($scope, $attrs) {
     
-    $scope.numbers = [];
-    for(var i=0; i<10; i++){
-        $scope.numbers.push(i+1);
-    }
+    $scope.numberLimit = $attrs.initialNumberLimit || 10;
+    
+    $scope.numbers = function () {
+        var numbers = [];
+        for(var i=0; i<$scope.numberLimit; i++){
+            numbers[i] = i + 1;
+        }
+        return numbers;
+    };
+    
+    $scope.compute = function (a, b) {
+        return a * b;
+    };
 });

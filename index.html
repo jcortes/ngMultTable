@@ -8,11 +8,12 @@
 
 <body>
     
-    <content>
-        <table ng-controller="MultiplicationCtrl">
-            <tr ng-repeat="numA in numbers">
-                <td ng-repeat="numB in numbers">
-                    {{numA * numB}}
+    <content ng-controller="MultiplicationCtrl" initial-number-limit="5">
+        <input type="number" ng-model="numberLimit" placeholder="Enter a number"/>
+        <table>
+            <tr ng-repeat="numA in numbers()">
+                <td ng-repeat="numB in numbers()">
+                    {{compute(numA, numB)}}
                 </td>
             </tr>
         </table>
